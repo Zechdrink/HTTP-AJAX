@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div className="App">
        It's working.
-       <FriendsList />
+       <FriendsList friends = {this.state.friends}/>
       </div>
     );
   }
