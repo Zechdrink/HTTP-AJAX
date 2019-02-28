@@ -25,11 +25,24 @@ class App extends Component {
   }
 
 
+  postPersonToServer = (event, friend) => {
+    event.preventDefault();
+    axios
+    .post('http://localhost:5000/friends', friend)
+    .then( response => { console.log("resolved:", response);
+    this.setState({ friends: response.data })
+
+  })
+
+    .catch( error => console.log("Uh Oh:", error))
+
+} 
+
 
   render() {
     return (
       <div className="App">
-       <Form />
+       <Form postPersonToServer = {this.postPersonToServer}/>
        <h1>It's Working</h1>
        <FriendsList friends = {this.state.friends}/>
       </div>
