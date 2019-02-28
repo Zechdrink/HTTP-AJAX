@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  width: 440px;
+  margin: 0 auto;
+}
+
+.card {
+  border: 1px solid black;
+  padding: 50px;
+  margin: 25px;
+}
+
+.form {
+  margin-top: 50px;
+}
+
+input {
+  border: 2px solid black;
+  padding: 5px 0;
+  margin: 5px 0;
+  text-align: center;
+}
