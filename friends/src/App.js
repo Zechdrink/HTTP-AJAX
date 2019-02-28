@@ -38,13 +38,27 @@ class App extends Component {
 
 } 
 
+removePersonFromServer = (event, id)  => {
+  event.preventDefault();
+  axios
+    .delete(`http://localhost:5000/friends/${id}`)
+    .then( response => {
+      this.setState({
+        friends: response.data
+      })
+    })
+    .catch(err => console.log(err));
+}
+
 
   render() {
     return (
       <div className="App">
        <Form postPersonToServer = {this.postPersonToServer}/>
        <h1>It's Working</h1>
-       <FriendsList friends = {this.state.friends}/>
+       <FriendsList friends = {this.state.friends}
+       removeFriend = {this.removePersonFromServer}
+       />
       </div>
     );
   }

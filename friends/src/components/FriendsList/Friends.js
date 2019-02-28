@@ -7,6 +7,7 @@ const Friends = props => {
 
 return (
     <div className = "card">
+        <button onClick = {e => props.removeFriend(e, props.friend.id)}>Go Away</button>
        <h3>{`Name: ${name}`}</h3>
        <h3>{`Age: ${age}`}</h3>
        <h3>{`Email: ${email}`}</h3>
